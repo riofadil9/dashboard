@@ -68,7 +68,7 @@
         // Check if username and password are correct
         if (username === "admin" && password === "123") {
             // Redirect to dashboard page
-            window.location.href = "dashboard.html";
+            window.location.href = "dashboard.php";
         } else {
             // Show error message (for simplicity, alert is used)
             alert("Invalid username or password. Please try again.");

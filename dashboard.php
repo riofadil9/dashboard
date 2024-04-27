@@ -42,11 +42,12 @@
         <div class="main-content">
             <h1>Dashboard</h1>
             <div class="form-container">
-                <form id="addForm">
-                    <input type="text" id="noId" placeholder="No ID">
-                    <input type="text" id="jeruk" placeholder="Jenis">
-                    <input type="text" id="stok" placeholder="Stok">
-                    <button type="button" class="btn" onclick="addData()">Add</button>
+                <!-- edit.php -->
+                <form method="POST" action="update.php">
+                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                    <input type="text" name="jenis" value="<?php echo $row['jenis']; ?>">
+                    <input type="text" name="stok" value="<?php echo $row['stok']; ?>">
+                    <button type="submit" class="btn">Update</button>
                 </form>
             </div>
             <table>
@@ -62,5 +63,8 @@
             </table>
         </div>
     </div>
+    <?php
+    echo "<td><a href='edit.php?id=" . $row['id'] . "'>Edit</a> | <a href='./control/delete.php?id=" . $row['id'] . "'>Hapus</a></td>";
+    ?>
 </body>
 </html>
